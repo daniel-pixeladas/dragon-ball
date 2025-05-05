@@ -6,7 +6,7 @@ export default async function FighterPage({
 }: {
   params: { idfighter: string };
 }) {
-  const { idfighter } = await params;
+  const { idfighter } = params;
 
   const fighter = await getFighter(Number.parseInt(idfighter));
   return (
