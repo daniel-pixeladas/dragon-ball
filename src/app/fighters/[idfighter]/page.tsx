@@ -4,9 +4,9 @@ import { getFighter } from "@/data/FightersRepository";
 export default async function FighterPage({
   params,
 }: {
-  params: { idfighter: string };
+  params: Promise<{idfighter: string}> ;
 }) {
-  const { idfighter } = params;
+  const { idfighter } = await params;
 
   const fighter = await getFighter(Number.parseInt(idfighter));
   return (
